@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import connectDB from './db.js';
 import authRoutes from './routes/auth.js';
+import auth from './middleware/auth.js';
 
 dotenv.config();
 
