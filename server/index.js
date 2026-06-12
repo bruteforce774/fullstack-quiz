@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import connectDB from './db.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
@@ -20,6 +21,8 @@ app.use(express.json());
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 })
+
+app.use('/api/auth', authRoutes);
 
 connectDB();
 
