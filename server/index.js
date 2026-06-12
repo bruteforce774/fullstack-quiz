@@ -7,6 +7,7 @@ import connectDB from './db.js';
 import auth from './middleware/auth.js';
 import authRoutes from './routes/auth.js';
 import scoresRoutes from './routes/scores.js';
+import quizRoutes from './routes/quiz.js';
 
 dotenv.config();
 
@@ -25,8 +26,8 @@ app.get('/api/health', (req, res) => {
 })
 
 app.use('/api/auth', authRoutes);
-
 app.use('/api/scores', scoresRoutes);
+app.use('/api/quiz', quizRoutes);
 
 connectDB();
 
